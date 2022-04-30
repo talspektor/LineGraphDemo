@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+
+        ScrollView(UIScreen.main.bounds.height < 750 ? .vertical : .init(), showsIndicators: false) {
+
+            Home()
+        }
+        .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top)
+        .background(Color("BG"))
     }
 }
 
